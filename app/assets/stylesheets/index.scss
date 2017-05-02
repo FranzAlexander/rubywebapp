@@ -1,0 +1,42 @@
+.dashboard_nav
+{
+  nav
+  {
+    margin:0 ;
+    background-color:#003554;
+  }
+
+  ul
+  {
+    margin: 0 auto;
+    padding: 0.5%;
+    background-color:#003554;
+    text-align: right;
+
+  }
+
+  li
+  {
+    display:inline-block;
+    a
+    {
+      font-size: 2em;
+      color:#FFFFFF;
+      text-decoration: none;
+      padding-right: 5px;
+    }
+  }
+}
+.wrapper
+{
+  color:white;
+}
+.table
+{
+  width: 70%;
+  margin: auto;
+}
+h1
+{
+  text-align: center;
+}

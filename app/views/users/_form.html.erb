@@ -1,0 +1,41 @@
+<%= form_for(user) do |f| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <nav class="page-nav">
+    <ul>
+      <li><%= link_to "Home" %></li>
+      <li><%= link_to "Login",login_path %></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+  <div class="row">
+
+  <div class="w-100"> <%= f.label :username, class: "login-label" %> </div>
+  <div class="w-100"> <%= f.text_field :username, class: "login-field" %> </div>
+
+  <div class="w-100"> <%= f.label :email, class: "login-label" %> </div>
+  <div class="w-100"> <%= f.email_field :email, class: "login-field" %> </div>
+
+  <div class="w-100"> <%= f.label :password, class: "login-label" %> </div>
+  <div class="w-100"> <%= f.password_field :password, class: "login-field" %> </div>
+
+  <div class="w-100"> <%= f.label :password_confirmation, class: "login-label" %> </div>
+  <div class="w-100"> <%= f.password_field :password_confirmation, class: "login-field" %> </div>
+
+  <div class="w-100"> <%= f.submit "Create",url: login_path , class: "login-button" %> </div>
+<% end %>
+</div>
+</div>
+<div class="link-div">
+    <p>If you have an ancount press<%= link_to "~> Back <~",login_path, class:'link-to-create' %></p>
+  </div>

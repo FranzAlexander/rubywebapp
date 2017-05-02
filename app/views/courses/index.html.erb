@@ -1,0 +1,33 @@
+
+
+<nav class="dashboard_nav">
+  <ul>
+    <li><%= link_to "Logout", root_path %></li>
+  </ul>
+</nav>
+<div class="wrapper">
+
+<h1>Student Dashboard</h1>
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>Course Name</th>
+    <th>Description</th>
+    <th>Date Started</th>
+    <th>Date End</th>
+  </tr>
+</thead>
+<% @courses.each do |course| %>
+<tbody>
+  <tr>
+    <td><%= course.name %></td>
+    <td><%= course.description %></td>
+    <td><%= course.date_started %></td>
+    <td><%= course.date_ended %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+
+</div>
