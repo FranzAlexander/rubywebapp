@@ -5,9 +5,12 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email].downcase)
 
-    if user && user.authenticate(params[:session][:password])
+    if user && user.authenticate(params[:session][:password]) && user.admin == 0
       log_in user
       redirect_to courses_path
+    elsif user && user.authenticate(params[:session][:password]) && user.admin == 1
+      log_in user
+      redirect_to admin_path
     else
       flash.now[:danger] = 'Invalid credentials'
       render 'new'

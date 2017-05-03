@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  resources :contents
   resources :courses
   get 'dashboard', to: 'base#dashboard'
+  get 'admin', to: 'courses#adminhome'
+  get 'admin_set', to: 'users#admin_create'
 
   resources :users
   get 'login', to: 'sessions#new'

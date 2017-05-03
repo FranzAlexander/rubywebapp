@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user, except: %i[new create]
 
   # GET /users
   # GET /users.json
@@ -7,6 +8,9 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def admin_create
+
+  end
   # GET /users/1
   # GET /users/1.json
   def show
@@ -25,10 +29,10 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    @user.admin = 0
       if @user.save
         redirect_to login_path
-        
+
     end
   end
 
@@ -66,5 +70,4 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:username, :email, :password, :password_confirmation)
     end
-
 end

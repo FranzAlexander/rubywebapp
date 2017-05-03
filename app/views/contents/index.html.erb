@@ -1,0 +1,24 @@
+<nav class="page-nav">
+  <ul>
+    <li><%= link_to "Courses", courses_path %></li>
+  </ul>
+</nav>
+
+<h1>Contents</h1>
+<div class="content-wrapper">
+  <% @contents.each do | content | %>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Class Number</th>
+        <th>Class Content</th>
+      </tr>
+    </thead>
+    <tbody>
+    <td><%= content.lesson_num %></td>
+    <td><%= content.lesson_con %> </td>
+    </tbody>
+    <% end %>
+</table>
+  <%= link_to 'New Content', new_content_path %>
+</div>
