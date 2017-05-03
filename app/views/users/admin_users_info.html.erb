@@ -1,0 +1,35 @@
+<nav class="admin-dashboard-nav">
+  <ul>
+    <li><%= link_to "Back", admin_path, class:"admin-nav-style" %></li>
+    <li class="last-item"><%= link_to "Logout", root_path %></li>
+  </ul>
+</nav>
+<div class="wrapper">
+<h1>Set Admin</h1>
+<p>Please only teachers and staff admins, if students are made into a admin there will be a follow up and a please explain </p>
+<table class="table table-bordered table-responsive ">
+
+<thead>
+  <tr>
+    <th>Users</th>
+    <th>Email</th>
+    <th>Admin Status</th>
+    <th>Edit user</th>
+  </tr>
+</thead>
+  <% @users.each do | user | %>
+<tbody>
+  <tr>
+  <td> <%= user.username %></td>
+  <td><%= user.email %></td>
+  <% if user.admin == 0 %>
+  <td>Admin</td>
+    <% elsif %>
+<td>Not Admin</td>
+    <% end %>
+    <td><%= link_to "Edit",admin_user_edit_path, class: "admin-info-edit-link" %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+</div>

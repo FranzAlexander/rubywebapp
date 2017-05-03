@@ -1,0 +1,22 @@
+<nav class="admin-dashboard-nav">
+  <ul>
+    <li><%= link_to "Back", admin_path, class:"admin-nav-style" %></li>
+    <li class="last-item"><%= link_to "Logout", root_path %></li>
+  </ul>
+</nav>
+
+<%= form_for(@user) do |f| %>
+<div class="container">
+<div class="row">
+
+<div class="w-100"> <p class="login-label">New Username</p></div>
+<div class="w-100"> <%= f.text_field :username, class: "login-field" %> </div>
+
+<div class="w-100"> <p class="login-label">New Email</p> </div>
+<div class="w-100"> <%= f.email_field :email, class: "login-field" %> </div>
+
+<div class="w-100"> <p class="login-label">Admin Status</p> </div>
+<div class="w-100"> <%= f.collection_select(:user,:admin,not = Hash{ "Not Active" => 0 }, :id, :name), class: "login-field" %> </div>
+
+<div class="w-100"> <%= f.submit "Create",url: login_path , class: "login-button" %> </div>
+<% end %>

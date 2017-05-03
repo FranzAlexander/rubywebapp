@@ -1,4 +1,4 @@
-.dashboard-nav
+.admin-dashboard-nav
 {
   nav
   {
@@ -23,31 +23,15 @@
       font-size: 2em;
       color:#FFFFFF;
       text-decoration: none;
-      padding-right: 5px;
+      padding: 5px;
     }
   }
 }
-.wrapper
+.last-item
 {
-  color:#FFFFFF;
+  border-left: 1px solid #FFFFFF;
 }
-.table
-{
-  width: 70%;
-  margin: auto;
-  font-size: 1.5em;
-}
-h1
-{
-  text-align: center;
-  color: #FFFFFF;
-}
-.view-content-link
-{
-  color: #FFFFFF;
-  text-decoration:underline;
-}
-.content-wrapper
+.admin-info-edit-link
 {
   color: #FFFFFF;
 }

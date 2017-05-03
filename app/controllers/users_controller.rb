@@ -8,8 +8,12 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def admin_create
+  def admin_users_info
+    @users = User.all
+  end
 
+  def users_edit
+    @user = User.new
   end
   # GET /users/1
   # GET /users/1.json
@@ -70,4 +74,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:username, :email, :password, :password_confirmation)
     end
+
 end

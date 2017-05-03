@@ -1,7 +1,7 @@
-<nav class="dashboard_nav">
+<nav class="admin-dashboard-nav">
   <ul>
-    <li><%= link_to "Logout", root_path %></li>
-    <li><%= link_to "Make Admin", admin_set_path %></li>
+    <li><%= link_to "Edit User", admin_manage_path, class:"admin-nav-style" %></li>
+    <li class="last-item"><%= link_to "Logout", root_path %></li>
   </ul>
 </nav>
 <div class="wrapper">
