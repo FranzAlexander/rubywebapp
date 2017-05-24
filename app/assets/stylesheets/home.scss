@@ -1,0 +1,44 @@
+body
+{
+  height: 100%;
+  background-color:#247BA0;
+}
+.wrapper
+{
+  margin:0;
+	background-color:#247BA0;
+	width: auto;
+	height: 100%;
+}
+
+.home-body
+{
+  width: 75%;
+  margin: 0px auto;
+  height: 100%;
+
+  .home-img
+  {
+
+    display: block;
+    margin: 0px auto;
+    height: auto;
+    max-width: 100%;
+  }
+
+  h1
+  {
+    padding: 0px;
+    color: white;
+    font-size: 3.5em;
+    width: 450px;
+    margin: 0px auto;
+  }
+
+  p
+  {
+    font-size: 1em;
+    color: #FFFFFF;
+    height: 40%;
+  }
+}

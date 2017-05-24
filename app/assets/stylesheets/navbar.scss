@@ -1,0 +1,64 @@
+.page-nav
+{
+  nav
+  	{
+  		margin:0 ;
+  		background-color:#003554;
+      font-size: 2em;
+
+  	}
+
+  	ul
+  	{
+  		margin: 0 auto;
+  		padding: 0.5%;
+  		background-color:#003554;
+  	}
+
+  	li
+  	{
+  		display:inline-block;
+  		border-right: #FFFFFF 1px solid;
+
+  		a
+  		{
+  			font-size: 2em;
+  			color:#FFFFFF;
+  			text-decoration: none;
+  			padding-right: 5px;
+  		}
+  	}
+}
+.admin-nav
+{
+  nav
+{
+  margin:0 ;
+  background-color:#003554;
+}
+
+ul
+{
+  margin: 0 auto;
+  padding: 0.5%;
+  background-color:#003554;
+  text-align: right;
+
+}
+
+li
+{
+  display:inline-block;
+  a
+  {
+    font-size: 2em;
+    color:#FFFFFF;
+    text-decoration: none;
+    padding: 5px;
+  }
+}
+.last-item
+{
+  border-left: 1px solid #FFFFFF;
+}
+}

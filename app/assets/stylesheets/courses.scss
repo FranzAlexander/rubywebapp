@@ -1,0 +1,33 @@
+// Place all the styles related to the courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.dash-wrapper
+{
+  color: #FFFFFF;
+}
+h1
+{
+  text-align: center;
+  color: #FFFFFF;
+}
+.course-table
+{
+  width: 80%;
+  margin: auto;
+  font-size: 1.5em;
+}
+.course-link
+{
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+.add-course-link
+{
+  color: #FFFFFF;
+  margin-left: 10%;
+}
+.modify-course-field-name
+{
+  color: #FFFFFF;
+  text-decoration: underline;
+}

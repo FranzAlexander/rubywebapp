@@ -1,0 +1,77 @@
+.container
+{
+  width: 50%;
+  margin: 80px auto 0;
+}
+
+.row
+{
+  border: 1px black solid;
+}
+
+.form-title
+{
+  margin: 0;
+  text-align: center;
+  font-size: 2.5em;
+  color: #FFFFFF;
+  background-color: #003554;
+  margin-bottom: 20px;
+}
+.login-label
+{
+  text-align: center;
+  margin: auto;
+  font-size: 2em;
+  width: 100%;
+  background-color: #003554;
+  display: block;
+  color: white;
+
+}
+.login-field
+{
+  margin:auto;
+  width: 100%;
+  border: 0px;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+.login-button
+{
+  width:45%;
+  height: 100px;
+  margin: 0 auto 20px;
+  display: block;
+  color: #FFFFFF;
+  background-color:#003554 ;
+  font-size: 2em;
+  padding: 0;
+  border: 1px solid transparent;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  border-radius: 0;
+  padding: 0.85em 1em;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.link-div
+{
+  width: 50%;
+  margin: auto;
+  p
+  {
+    color: white;
+    font-size: 1em;
+    float: left;
+    margin: auto;
+    text-align: center;
+  }
+      .link-to-create
+      {
+        float: right;
+        margin-left: 5px;
+        font-size: 1em;
+        color: white;
+        text-decoration: underline;
+      }
+}
