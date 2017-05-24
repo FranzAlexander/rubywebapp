@@ -1,0 +1,48 @@
+<nav class="admin-nav">
+  <ul>
+    <% if current_user.admin == 1%>
+    <li><%= link_to "Edit User", users_path, class:"admin-nav-link" %></li>
+      <% end %>
+    <li class="last-item"><%= link_to "Logout", logout_path ,method: :delete %></li>
+  </ul>
+</nav>
+<% if current_user.admin == 0%>
+  <h1>Student Dashboard</h1>
+<%end %>
+<% if current_user.admin == 1%>
+  <h1>Admin Dashboard</h1>
+  <%end %>
+
+<div class="dash-wrapper">
+
+  <table class="table table-bordered course-table">
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Course Description</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <% if current_user.admin == 1%>
+        <th colspan="2">Options</th>
+        <% end %>
+      </tr>
+    </thead>
+    <% @courses.each do |f| %>
+    <tbody>
+      <tr>
+        <td><%= link_to f.name, course_contents_path(f), class: 'course-link' %></td>
+        <td><%= f.description%></td>
+        <td><%= f.date_started %></td>
+        <td><%= f.date_ended %></td>
+        <% if current_user.admin == 1%>
+        <td><%= link_to "Edit", edit_course_path(f), class:'course-link'%></td>
+        <td><%= link_to "Delete", f, method: :delete, data: {confirm: 'Are you sure?'}, class: 'course-link'%></td>
+        <% end %>
+      </tr>
+    </tbody>
+    <% end %>
+    <% if current_user.admin == 1%>
+    <h2><%= link_to "New Course", new_course_path, class: 'add-course-link'%></h2>
+    <%end%>
+  </table>
+</div>

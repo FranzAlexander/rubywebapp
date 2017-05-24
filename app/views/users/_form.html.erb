@@ -1,0 +1,36 @@
+<%= form_for(user) do | f |%>
+
+<nav class="page-nav">
+    <ul>
+      <li><%= link_to "Home" %></li>
+      <li><%= link_to "Login",login_path %></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+   <div class="row">
+
+   <div class="w-100"> <%= f.label :name, class: "login-label" %> </div>
+   <div class="w-100"> <%= f.text_field :name, class: "login-field" %> </div>
+
+   <div class="w-100"> <%= f.label :email, class: "login-label" %> </div>
+   <div class="w-100"> <%= f.email_field :email, class: "login-field" %> </div>
+
+   <div class="w-100"> <%= f.label :password, class: "login-label" %> </div>
+   <div class="w-100"> <%= f.password_field :password, class: "login-field" %> </div>
+
+   <div class="w-100"> <%= f.label :password_confirmation, class: "login-label" %> </div>
+   <div class="w-100"> <%= f.password_field :password_confirmation, class: "login-field" %> </div>
+
+   <% f.number_field :admin%>
+
+   <div class="w-100"> <%= f.submit "Create",url: login_path , class: "login-button" %> </div>
+
+
+  </div>
+</div>
+
+  <div class="link-div">
+    <p>If you have an ancount press<%= link_to "~> Back <~", login_path, class:'link-to-create' %></p>
+  </div>
+<%end %>

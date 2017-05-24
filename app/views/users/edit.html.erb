@@ -1,0 +1,44 @@
+<%testing = true%>
+  <%if !logged_in? && testing == true%>
+  <%= render 'form', user: @user %>
+<%end %>
+
+<%= form_for(@user) do | f |%>
+
+<% testing = false%>
+<% if logged_in? && testing == false%>
+
+<nav class="admin-nav">
+  <ul>
+    <li><%= link_to "Logout", logout_path, method: :delete %></li>
+    <li><%= link_to "Back", users_path%></li>
+  </ul>
+</nav>
+
+<div class="dash-wrapper">
+
+  <h1>Edit User</h1>
+
+  <table class="table table-bordered course-table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Admin Status</th>
+      <th>Confirm</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= f.text_field :name,:value => "#{@user.name}", class: "modify-course-field" %></td>
+      <td><%= f.email_field :email, :value => "#{@user.email}", class: "modify-course-field" %></td>
+      <td><%= f.check_box :admin, :value => "#{@user.admin}" %></td>
+      <td><%= f.submit "Save", class: "modify-edit-btn" %></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<% end %>
+<% end %>

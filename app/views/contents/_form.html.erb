@@ -1,0 +1,31 @@
+<%= form_for(content) do |f| %>
+  <nav class="admin-nav">
+    <ul>
+      <li><%= link_to "Back", courses_path, class:"admin-nav-link" %></li>
+      <li class="last-item"><%= link_to "Logout", logout_path ,method: :delete %></li>
+    </ul>
+  </nav>
+
+  <table class="table table-bordered content-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Lesson Number</th>
+        <th>Lesson Description</th>
+        <th>Class Room</th>
+        <th>Lesson Teacher</th>
+        <th>Save</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= f.number_field :course_id, hidden: true %></td>
+        <td><%= f.number_field :lesson_number %></td>
+        <td><%= f.text_field :lesson_description%></td>
+        <td><%= f.text_field :class_room%></td>
+        <td><%= f.text_field :lesson_teacher%></td>
+        <td><%= f.submit "Save" %></td>
+      </tr>
+    </tbody>
+</table>
+<% end %>

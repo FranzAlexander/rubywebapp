@@ -1,0 +1,31 @@
+<%= form_for(course) do |f| %>
+<nav class="admin-nav">
+  <ul>
+    <li><%= link_to "Logout", logout_path, method: :delete %></li>
+    <li><%= link_to "Back", courses_path%></li>
+  </ul>
+</nav>
+<div class="dash-wrapper">
+  <h1>Add/Edit Course</h1>
+  <table class="table table-bordered course-table">
+    <thead>
+    <tr>
+      <th>Course Name</th>
+      <th>Description</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Confirm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= f.text_field :name,:value => "#{@course.name}", class: "modify-course-field" %></td>
+      <td><%= f.text_field :description, :value => "#{@course.description}", class: "modify-course-field" %></td>
+      <td><%= f.date_select :date_started, :value => "#{@course.date_started}", class: "modify-course-field" %></td>
+      <td><%= f.date_select :date_ended, :value => "#{@course.date_ended}", class: "modify-course-field" %></td>
+      <td><%= f.submit "Save", class: "modify-edit-btn" %></td>
+    </tr>
+  </tbody>
+  <% end %>
+  </table>
+</div>

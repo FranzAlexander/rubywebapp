@@ -1,0 +1,27 @@
+<% flash.each do |message_type, message | %>
+<div><%= message %></div>
+<% end %>
+
+<nav class="page-nav">
+  <ul>
+    <li><%= link_to "Home", root_path%></li>
+    <li><a href="">Login</a></li>
+  </ul>
+</nav>
+ <%= form_for :session, url: login_path do |f| %>
+<div class="container">
+  <div class="row">
+ <div class="w-100"><h2 class="form-title">Student Login</h2> </div>
+<div class="w-100">   <%= f.label :email, class: "login-label" %> </div>
+<div class="w-100">  <%= f.email_field :email, class: "login-field" %></div>
+
+<div class="w-100">  <%= f.label :password, class: "login-label" %></div>
+<div class="w-100">  <%= f.password_field :password, class: "login-field" %></div>
+
+<div class="w-100">  <%= f.submit "Log in", class: "login-button" %></div>
+  <% end %>
+</div>
+</div>
+<div class="link-div">
+    <p>If you don't have a login click this link to create one <%= link_to "Create Login",new_user_path, class:'link-to-create' %></p>
+  </div>
