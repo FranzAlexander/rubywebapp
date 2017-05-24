@@ -33,5 +33,12 @@ test:
   timeout: 5000
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: mysql2
+  encoding: utf8
+  database: balcombe_webapp
+  pool: 5
+  username: alex_admin
+  password: BalcomAl1
+  host: 223.27.22.124
+  port: 3306
+  timeout: 5000
