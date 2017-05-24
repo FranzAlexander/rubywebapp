@@ -33,7 +33,7 @@
         <td><%= content.lesson_teacher %></td>
         <%if current_user.admin == 1%>
         <td><%= link_to 'Edit', edit_content_path(content), class: 'content-link' %></td>
-        <td><%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' }, class: 'content-link' %></td>
+        <td><%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' }, class: 'courses_path' %></td>
         <%end%>
       </tr>
     <% end %>
