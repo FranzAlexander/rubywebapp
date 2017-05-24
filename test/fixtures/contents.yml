@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lesson_number: 1
+  lesson_description: sds
+  class_room: sad5
+  lesson_teacher: MyString
+
+two:
+  lesson_number: 5
+  lesson_description: sadsadf
+  class_room: s5d
+  lesson_teacher: MyString
