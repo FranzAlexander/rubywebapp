@@ -22,12 +22,9 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
   end
 
-  def admin
-    @courses = Course.all
-  end
   # POST /courses
   # POST /courses.json
-  def create
+  def create #Used to create courses
     begin
     @course = Course.new(course_params)
 
@@ -42,7 +39,7 @@ class CoursesController < ApplicationController
 
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
-  def update
+  def update #Updates course data
     begin
 
     @course = Course.find(params[:id])
@@ -59,7 +56,7 @@ end
   # DELETE /courses/1
   # DELETE /courses/1.json
 
-  def destroy
+  def destroy #Destroys course data
     @course.destroy
     respond_to do |format|
       format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }

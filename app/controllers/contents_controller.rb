@@ -3,7 +3,7 @@ class ContentsController < ApplicationController
   before_action :authenticate_user
   # GET /contents
   # GET /contents.json
-  def index
+  def index #Method displays the contents that belong to the course's id.
     begin
 
     if params[:id]
@@ -23,7 +23,7 @@ end
   end
 
   # GET /contents/new
-  def new
+  def new #Creates the content but for that course.
     @content = Content.new
     @content.course_id = params[:id]
   end

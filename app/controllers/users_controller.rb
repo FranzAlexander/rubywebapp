@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.json
-  def create
+  def create #Creating the user account admin is set to false and then admin will have to change it to the database.
     @user = User.new(user_params)
     @user.admin = 0
     if @user.save
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   # DELETE /users/1.json
-  def destroy
+  def destroy #Not code that works dude to admin being only able to delete accounts in the database.
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
+    def user_params #What is needed to successfully create a user account.
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
