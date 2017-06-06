@@ -2,9 +2,7 @@
 
 <nav class="admin-nav">
   <ul>
-    <% if current_user.admin == 1%>
     <li><%= link_to "Back", courses_path, class:"admin-nav-link" %></li>
-    <%end%>
     <li class="last-item"><%= link_to "Logout", logout_path ,method: :delete %></li>
   </ul>
 </nav>
@@ -41,6 +39,7 @@
 </table>
 
 <br>
-
-<%= link_to 'New Content', course_contents_new_path, class: 'content-link' %>
+<% if current_user.admin == 1%>
+<%= link_to 'New Content', course_contents_new_path, class: 'new-content-link' %>
+<%end%>
 </div>

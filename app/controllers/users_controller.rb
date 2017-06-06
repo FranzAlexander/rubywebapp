@@ -36,6 +36,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    #Old code for feature that isnt there anymore.
     @user = User.find(params[:id])
     if @user.update_attributes(update_params)
       redirect_to users_path, :id => @user

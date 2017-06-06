@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get 'courses/:id/contents/new', to: 'contents#new', as: 'course_contents_new'
 
+  get 'home', to: 'home#new'
   root to: 'home#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
