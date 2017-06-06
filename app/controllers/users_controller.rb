@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   def destroy #Not code that works dude to admin being only able to delete accounts in the database.
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to home_path, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
