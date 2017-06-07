@@ -7,9 +7,10 @@ module SessionsHelper
   def current_user #Find what the id of the current user is.
     begin
     @current_user ||= User.find_by(id: session[:user_id])
-  rescue Exception => exc
+  rescue exc
        logger.error("Message for the log file #{exc.message}")
-       flash[:notice] = "Store error message"
+       flash[:notice] = "Application error message"
+       raise exc
 end
   end
 
@@ -21,9 +22,10 @@ end
     begin
     session.delete(:user_id)
     @current_user = nil
-  rescue Exception => exc
+  rescue exc
        logger.error("Message for the log file #{exc.message}")
-       flash[:notice] = "Store error message"
+       flash[:notice] = "Application error message"
+       raise exc
 end
   end
 

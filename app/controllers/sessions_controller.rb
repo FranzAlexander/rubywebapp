@@ -15,9 +15,10 @@ class SessionsController < ApplicationController
       flash.now[:danger] = 'Invalid credentials'
       render 'new'
     end
-  rescue Exception => exc
+  rescue exc
        logger.error("Message for the log file #{exc.message}")
-       flash[:notice] = "Store error message"
+       flash[:notice] = "Application error message"
+       raise exc
 end
   end
   #Destroys the current user session.

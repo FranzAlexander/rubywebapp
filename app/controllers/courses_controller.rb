@@ -15,7 +15,7 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
-
+    render :partial => 'course', :object => @course
   end
   # GET /courses/1/edit
   def edit
@@ -31,9 +31,10 @@ class CoursesController < ApplicationController
       if @course.save
         redirect_to courses_path
       end
-    rescue Exception => exc
+    rescue exc
          logger.error("Message for the log file #{exc.message}")
-         flash[:notice] = "Store error message"
+         flash[:notice] = "Application error message"
+         raise exc
   end
   end
 
@@ -47,9 +48,10 @@ class CoursesController < ApplicationController
     if @course.update_attributes(course_params)
      redirect_to courses_path, :id => @course
     end
-  rescue Exception => exc
+  rescue exc
        logger.error("Message for the log file #{exc.message}")
-       flash[:notice] = "Store error message"
+       flash[:notice] = "Application error message"
+       raise exc
 end
   end
 

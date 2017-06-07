@@ -11,9 +11,10 @@ class ContentsController < ApplicationController
     else
       @contents = Content.all
     end
-  rescue Exception => exc
+  rescue exc
        logger.error("Message for the log file #{exc.message}")
-       flash[:notice] = "Store error message"
+       flash[:notice] = "Application error message"
+       raise exc
 end
   end
 
@@ -42,9 +43,10 @@ end
     if @content.save
       redirect_to courses_path
     end
-    rescue Exception => exc
+    rescue exc
          logger.error("Message for the log file #{exc.message}")
-         flash[:notice] = "Store error message"
+         flash[:notice] = "Application error message"
+          raise exc
   end
   end
 
@@ -56,9 +58,10 @@ end
       if @content.update_attributes(content_params)
         redirect_to contents_path, :id => @content
       end
-    rescue Exception => exc
+    rescue exc
          logger.error("Message for the log file #{exc.message}")
-         flash[:notice] = "Store error message"
+         flash[:notice] = "Application error message"
+         raise exc
   end
   end
 

@@ -19,10 +19,10 @@
   </thead>
   <tbody>
     <tr>
-      <td><%= f.text_field :name,:value => "#{@course.name}", class: "modify-course-field" %></td>
-      <td><%= f.text_field :description, :value => "#{@course.description}", class: "modify-course-field" %></td>
-      <td><%= f.date_select :date_started, :value => "#{@course.date_started}", class: "modify-course-field" %></td>
-      <td><%= f.date_select :date_ended, :value => "#{@course.date_ended}", class: "modify-course-field" %></td>
+      <td><%= f.text_field :name,:value => "#{course.name}", class: "modify-course-field" %></td>
+      <td><%= f.text_field :description, :value => "#{course.description}", class: "modify-course-field" %></td>
+      <td><%= f.date_select :date_started, :value => "#{course.date_started}", class: "modify-course-field" %></td>
+      <td><%= f.date_select :date_ended, :value => "#{course.date_ended}", class: "modify-course-field" %></td>
       <td><%= f.submit "Save", class: "modify-edit-btn" %></td>
     </tr>
   </tbody>
